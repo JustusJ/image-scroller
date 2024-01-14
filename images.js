@@ -108,7 +108,16 @@ const natalieDormer = [
   "https://i.imgur.com/hws6P8I.jpg",
 ];
 
+const evangelineLilly = [
+  "https://i.imgur.com/BVVJj2S.jpg",
+  "https://i.imgur.com/JzaPHNP.jpg",
+  "https://i.imgur.com/qRz0OhB.jpg",
+  "https://i.imgur.com/rbee6J5.jpg",
+  "https://i.imgur.com/UXqIlrO.jpg",
+];
+
 window.allImages = {
   emmaWatson,
   natalieDormer,
+  evangelineLilly,
 };
