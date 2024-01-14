@@ -1,0 +1,133 @@
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  background-image: url("https://searchfox.org/mozilla-central/source/toolkit/themes/shared/media/imagedoc-darknoise.png");
+  overflow: hidden;
+  --time-elapsed: 0%;
+}
+
+body.settings-open {
+  overflow: initial;
+}
+
+.show {
+  display: block;
+}
+
+.settings {
+  display: none;
+  position: absolute;
+  top: 0px;
+  --grid-size: 4;
+}
+
+.settings-open .settings {
+  display: block;
+}
+
+.settings-set-select {
+  display: inline-block;
+}
+
+.container {
+  height: 100vh;
+}
+
+.settings-open .container {
+  display: none;
+}
+
+.container::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.mainImage {
+  opacity: 0;
+  position: absolute;
+  height: 100vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  --fade-time: 6s;
+  --translate: 50%;
+  --ease-in: cubic-bezier(0.74, 0.02, 0.56, 0.88);
+  --ease-out: cubic-bezier(0.74, 0.02, 0.78, 0.73);
+}
+
+.mainImage--shown {
+  opacity: 1;
+}
+
+.slide-in {
+  animation: slidein var(--fade-time) var(--ease-in);
+}
+
+.slide-out {
+  opacity: 0;
+  animation: slideout calc(var(--fade-time) * 0.4) var(--ease-out);
+}
+@keyframes slidein {
+  0% {
+    transform: translateX(var(--translate));
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideout {
+  from {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(calc(var(--translate) * -1));
+    opacity: 0;
+  }
+}
+
+.grid {
+  display: none;
+}
+
+.settings-open .grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), 1fr);
+}
+
+.grid .grid-image {
+  max-width: 100%;
+}
+
+body:hover .timer {
+  opacity: 1;
+}
+
+.timer {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.2s;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  width: 100px;
+  height: 5px;
+  border: 1px solid rgba(0, 0, 0);
+  background: linear-gradient(90deg, rgba(125, 125, 125, 0.2) var(--time-elapsed), rgba(0, 0, 0, 0) var(--time-elapsed));
+  box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.settings-open .timer {
+  display: none;
+}
