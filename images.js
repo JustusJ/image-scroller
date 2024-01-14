@@ -112,7 +112,6 @@ const evangelineLilly = [
   "https://i.imgur.com/BVVJj2S.jpg",
   "https://i.imgur.com/JzaPHNP.jpg",
   "https://i.imgur.com/qRz0OhB.jpg",
-  "https://i.imgur.com/rbee6J5.jpg",
   "https://i.imgur.com/UXqIlrO.jpg",
 ];
 
